@@ -11,3 +11,14 @@ c:\users\bya\source\repos\WebClient\WebClient\obj\Debug\netcoreapp1.1\WebClient.
 c:\users\bya\source\repos\WebClient\WebClient\obj\Debug\netcoreapp1.1\WebClient.pdb
 c:\users\bya\source\repos\WebClient\WebClient\bin\Debug\netcoreapp1.1\QlikServiceClusterManager.Model.dll
 c:\users\bya\source\repos\WebClient\WebClient\bin\Debug\netcoreapp1.1\QlikServiceClusterManager.Model.pdb
+C:\Users\BYA\Projects\WebClient\WebClient\obj\Debug\netcoreapp1.1\WebClient.csprojResolveAssemblyReference.cache
+C:\Users\BYA\Projects\WebClient\WebClient\obj\Debug\netcoreapp1.1\WebClient.csproj.CoreCompileInputs.cache
+C:\Users\BYA\Projects\WebClient\WebClient\obj\Debug\netcoreapp1.1\WebClient.AssemblyInfoInputs.cache
+C:\Users\BYA\Projects\WebClient\WebClient\obj\Debug\netcoreapp1.1\WebClient.AssemblyInfo.cs
+C:\Users\BYA\Projects\WebClient\WebClient\obj\Debug\netcoreapp1.1\WebClient.dll
+C:\Users\BYA\Projects\WebClient\WebClient\obj\Debug\netcoreapp1.1\WebClient.pdb
+C:\Users\BYA\Projects\WebClient\WebClient\bin\Debug\netcoreapp1.1\WebClient.deps.json
+C:\Users\BYA\Projects\WebClient\WebClient\bin\Debug\netcoreapp1.1\WebClient.runtimeconfig.json
+C:\Users\BYA\Projects\WebClient\WebClient\bin\Debug\netcoreapp1.1\WebClient.runtimeconfig.dev.json
+C:\Users\BYA\Projects\WebClient\WebClient\bin\Debug\netcoreapp1.1\WebClient.dll
+C:\Users\BYA\Projects\WebClient\WebClient\bin\Debug\netcoreapp1.1\WebClient.pdb

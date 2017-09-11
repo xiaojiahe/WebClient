@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using Newtonsoft.Json;
-using WebClient.Models;
+using Qlik.Sense.ServiceClusterManager.Model;
 
 namespace WebClient.Controllers
 {
@@ -15,13 +15,14 @@ namespace WebClient.Controllers
         public ActionResult Index()
         {
             using (HttpClient client = new HttpClient())
-            {
-                client.BaseAddress = new Uri ("http://localhost:5000");
+            {  
+                client.BaseAddress = new Uri("http://localhost:5000");
                 MediaTypeWithQualityHeaderValue contentType = new MediaTypeWithQualityHeaderValue("application/json");
                 client.DefaultRequestHeaders.Accept.Add(contentType);
                 HttpResponseMessage response = client.GetAsync("/servicecluster/getall").Result;
                 string stringData = response.Content.ReadAsStringAsync().Result;
-                var myDeserializedObjList = (List<ServiceCluster>)JsonConvert.DeserializeObject(stringData,typeof(List<ServiceCluster>));
+                var myDeserializedObjList = (List<ServiceCluster>)JsonConvert.DeserializeObject(stringData, typeof(List<ServiceCluster>));
+                ViewData["Mes"] = myDeserializedObjList;
                 return View(myDeserializedObjList);
             }
         }

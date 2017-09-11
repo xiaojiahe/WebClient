@@ -1,0 +1,8 @@
+C:\Users\BYA\Projects\qsu-qlik-service-cluster\src\QlikServiceClusterManager.Model\bin\Debug\netcoreapp1.1\QlikServiceClusterManager.Model.deps.json
+C:\Users\BYA\Projects\qsu-qlik-service-cluster\src\QlikServiceClusterManager.Model\bin\Debug\netcoreapp1.1\QlikServiceClusterManager.Model.dll
+C:\Users\BYA\Projects\qsu-qlik-service-cluster\src\QlikServiceClusterManager.Model\bin\Debug\netcoreapp1.1\QlikServiceClusterManager.Model.pdb
+C:\Users\BYA\Projects\qsu-qlik-service-cluster\src\QlikServiceClusterManager.Model\obj\Debug\netcoreapp1.1\QlikServiceClusterManager.Model.csproj.CoreCompileInputs.cache
+C:\Users\BYA\Projects\qsu-qlik-service-cluster\src\QlikServiceClusterManager.Model\obj\Debug\netcoreapp1.1\QlikServiceClusterManager.Model.AssemblyInfoInputs.cache
+C:\Users\BYA\Projects\qsu-qlik-service-cluster\src\QlikServiceClusterManager.Model\obj\Debug\netcoreapp1.1\QlikServiceClusterManager.Model.AssemblyInfo.cs
+C:\Users\BYA\Projects\qsu-qlik-service-cluster\src\QlikServiceClusterManager.Model\obj\Debug\netcoreapp1.1\QlikServiceClusterManager.Model.dll
+C:\Users\BYA\Projects\qsu-qlik-service-cluster\src\QlikServiceClusterManager.Model\obj\Debug\netcoreapp1.1\QlikServiceClusterManager.Model.pdb
