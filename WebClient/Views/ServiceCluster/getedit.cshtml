@@ -1,6 +1,6 @@
 @model Qlik.Sense.ServiceClusterManager.Model.ServiceCluster
 
-<form asp-action="postedit" action="POST">
+<form asp-action="postedit" >
     <div class="form-horizontal">
         <h4>ServiceCluster</h4>
         <hr />
@@ -8,7 +8,7 @@
         <div class="form-group">
             <label asp-for="Name" class="col-md-2 control-label"></label>
             <div class="col-md-10">
-                <input asp-for="Name" class="form-control" name="Name" />
+                <input asp-for="Name" class="form-control" />
                 <span asp-validation-for="Name" class="text-danger"></span>
             </div>
         </div>
@@ -57,6 +57,6 @@
 </form>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="getAll">Back to List</a>
 </div>
 

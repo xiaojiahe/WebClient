@@ -49,8 +49,6 @@ namespace WebClient.Controllers
                 return View();
         }
 
-
-
         [HttpPost]
         public async void gotocreate(ServiceCluster serviceCluster)
         {
@@ -66,8 +64,6 @@ namespace WebClient.Controllers
             }
         }
 
-
-       
         public void postdelete(string id)
         {
             using (HttpClient client = new HttpClient())
@@ -79,7 +75,7 @@ namespace WebClient.Controllers
             }
         }
 
-        public ActionResult edit(string id)
+        public ActionResult getedit(string id)
         {
             using (HttpClient client = new HttpClient())
             {
@@ -93,5 +89,22 @@ namespace WebClient.Controllers
             }
         }
 
+        
+        public async void postedit(ServiceCluster serviceCluster)
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                Guid id = serviceCluster.Id;
+                Uri requestUri = new Uri("http://localhost:5000/ServiceCluster/Update" + $"/{id}");
+                serviceCluster.SharedFolderSettings.RootFolder = "C://whichever";
+                string json = "";
+                json = Newtonsoft.Json.JsonConvert.SerializeObject(serviceCluster);
+                var objClint = new System.Net.Http.HttpClient();
+                System.Net.Http.HttpResponseMessage respon = await client.PutAsync(requestUri, new StringContent(json, System.Text.Encoding.UTF8, "application/json"));
+                string responJsonText = await respon.Content.ReadAsStringAsync();
+            }
+
+            RedirectToAction("getall");
+        }
     }
 }
