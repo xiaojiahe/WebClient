@@ -49,9 +49,10 @@
                 @Html.DisplayFor(modelItem => item.IdentifiedInternally)
             </td>
             <td>
-                @Html.ActionLink("Edit", "get", new { /* id=item.id */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.id */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.id */ })
+                @Html.ActionLink("Edit", "get", new { /* Id=item.Id */ }) |
+                @Html.ActionLink("Details", "Details", new { /* Id=item.Id */ }) |
+                @Html.ActionLink("Delete", "postdelete", "ServiceCluster",new {Id=item.Id})
+                <%=Html.ActionLink("Delete", "postdelete",new {Id=item.Id})%>
             </td>
         </tr>
 }

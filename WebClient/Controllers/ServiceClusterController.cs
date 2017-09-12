@@ -42,34 +42,40 @@ namespace WebClient.Controllers
             }
         }
 
-        [HttpPost]
+      
         public ActionResult create()
         {
-            using (HttpClient client = new HttpClient())
-            {
-                client.DefaultRequestHeaders.Accept.Clear();
-              
-                MediaTypeWithQualityHeaderValue contentType = new MediaTypeWithQualityHeaderValue("application/json");
-               
-                String jsonInString = JsonConvert.SerializeObject(serviceCluster);
-                client.PostAsync(new Uri("http://localhost:5000/ServiceCluster/add"),new StringContent(jsonInString, System.Text.Encoding.UTF8, "application/json"));
-               
+           
                 return View();
+        }
+
+
+
+        [HttpPost]
+        public async void gotocreate(ServiceCluster serviceCluster)
+        {
+             using (HttpClient client = new HttpClient())
+             {
+                Uri requestUri = new Uri("http://localhost:5000/ServiceCluster/add");
+                serviceCluster.SharedFolderSettings.RootFolder = "C://whichever";
+                string json = "";
+                json = Newtonsoft.Json.JsonConvert.SerializeObject(serviceCluster);
+                var objClint = new System.Net.Http.HttpClient();
+                System.Net.Http.HttpResponseMessage respon = await  client.PostAsync(requestUri, new StringContent(json, System.Text.Encoding.UTF8, "application/json"));
+                string responJsonText = await respon.Content.ReadAsStringAsync();
             }
         }
 
 
-        public ActionResult delete(string id)
+       
+        public void postdelete(string id)
         {
             using (HttpClient client = new HttpClient())
             {
                 client.BaseAddress = new Uri("http://localhost:5000");
                 MediaTypeWithQualityHeaderValue contentType = new MediaTypeWithQualityHeaderValue("application/json");
                 client.DefaultRequestHeaders.Accept.Add(contentType);
-                HttpResponseMessage response = client.GetAsync("/servicecluster/get" + $"/{id}").Result;
-                string stringData = response.Content.ReadAsStringAsync().Result;
-                var myDeserialized = (ServiceCluster)JsonConvert.DeserializeObject(stringData, typeof(ServiceCluster));
-                return View(myDeserialized);
+                HttpResponseMessage response = client.DeleteAsync("/servicecluster/delete" + $"/{id}").Result;
             }
         }
 
