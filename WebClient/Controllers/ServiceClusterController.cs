@@ -41,5 +41,51 @@ namespace WebClient.Controllers
                 return View(myDeserialized);
             }
         }
+
+        [HttpPost]
+        public ActionResult create()
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                client.DefaultRequestHeaders.Accept.Clear();
+              
+                MediaTypeWithQualityHeaderValue contentType = new MediaTypeWithQualityHeaderValue("application/json");
+               
+                String jsonInString = JsonConvert.SerializeObject(serviceCluster);
+                client.PostAsync(new Uri("http://localhost:5000/ServiceCluster/add"),new StringContent(jsonInString, System.Text.Encoding.UTF8, "application/json"));
+               
+                return View();
+            }
+        }
+
+
+        public ActionResult delete(string id)
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                client.BaseAddress = new Uri("http://localhost:5000");
+                MediaTypeWithQualityHeaderValue contentType = new MediaTypeWithQualityHeaderValue("application/json");
+                client.DefaultRequestHeaders.Accept.Add(contentType);
+                HttpResponseMessage response = client.GetAsync("/servicecluster/get" + $"/{id}").Result;
+                string stringData = response.Content.ReadAsStringAsync().Result;
+                var myDeserialized = (ServiceCluster)JsonConvert.DeserializeObject(stringData, typeof(ServiceCluster));
+                return View(myDeserialized);
+            }
+        }
+
+        public ActionResult edit(string id)
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                client.BaseAddress = new Uri("http://localhost:5000");
+                MediaTypeWithQualityHeaderValue contentType = new MediaTypeWithQualityHeaderValue("application/json");
+                client.DefaultRequestHeaders.Accept.Add(contentType);
+                HttpResponseMessage response = client.GetAsync("/servicecluster/get" + $"/{id}").Result;
+                string stringData = response.Content.ReadAsStringAsync().Result;
+                var myDeserialized = (ServiceCluster)JsonConvert.DeserializeObject(stringData, typeof(ServiceCluster));
+                return View(myDeserialized);
+            }
+        }
+
     }
 }
