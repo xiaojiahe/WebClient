@@ -12,7 +12,7 @@ namespace Qlik.Sense.ServiceClusterManager.Model
 		void Identify();
 	}
 
-	[DebuggerDisplay("[{GetType()}] ID={Id}")]
+	[DebuggerDisplay("[{GetType()}] IDh={Id}")]
 	public class PersistentModel : IPersistentModel
 	{
 		protected PersistentModel()

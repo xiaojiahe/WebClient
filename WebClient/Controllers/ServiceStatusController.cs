@@ -9,7 +9,7 @@ namespace WebClient.Controllers
     public class ServiceStatusController : Controller
     {
         public IActionResult Index()
-        {
+        { 
             return View();
         }
     }
